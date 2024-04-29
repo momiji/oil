@@ -82,11 +82,18 @@ create() {
   ls -l $out
 }
 
-demo() {
+create-hello() {
   find yaks/ -name '*.py' | xargs -- $0 create devtools/hello-xshar.sh 
   ls -l _release
+}
 
+soil-run-hello() {
+  create-hello
   _release/hello-xshar.xshar main a b c
+}
+
+soil-run-test-oils() {
+  echo TODO
 }
 
 run-task "$@"
